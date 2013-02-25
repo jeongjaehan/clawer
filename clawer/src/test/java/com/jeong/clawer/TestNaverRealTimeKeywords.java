@@ -1,17 +1,15 @@
 package com.jeong.clawer;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.junit.Test;
 
 /**
- * 네이버 실시간 검색어 Jsoup lib를 이용하여 가져오기
- * exam format : 1,이하늬(up),http://search.naver.com/search.naver?where=nexearch&query=%EC%9D%B4%ED%95%98%EB%8A%AC&sm=top_lve&ie=utf8 
+ * TEST 네이버 실시간 검색어 Jsoup lib를 이용하여 가져오기 
  * @author jeong
  *
  */
@@ -24,25 +22,8 @@ public class TestNaverRealTimeKeywords {
 		Document doc = Jsoup.connect(pageUrl ).get();
 		String selector="#realrank li a"; // css selector 
 
-		Elements rcw = doc.select( selector );
-
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		long nowmills = System.currentTimeMillis();
-		String now = sdf.format(new Date(nowmills));
-		System.out.println("검색어 가져온 시간 : "+now);
-
-		for (Element el : rcw) {
-			String id = el.parent().attr("id");
-			String no = el.parent().attr("value");
-			String newORup = el.parent().attr("class");
-			String title =el.attr("title");
-			String link =el.attr("href");
-
-			if(!id.equals("lastrank")){
-				System.out.printf("%s,%s(%s),%s \n", no,title,newORup,link);
-			}
-		}
-
+		Elements keywords = doc.select( selector );
+		assertThat(keywords.size(), is(11)); // 마지막에 li가 하나 더잇음 -.-;;
 	}
 
 }

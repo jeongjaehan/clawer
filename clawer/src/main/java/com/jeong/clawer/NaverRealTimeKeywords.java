@@ -21,6 +21,7 @@ public class NaverRealTimeKeywords {
 		String pageUrl="http://naver.com/";
 
 		Document doc = Jsoup.connect( pageUrl ).get();
+		System.out.println(doc.head());
 		String selector="#realrank li a"; // css selector 
 
 		Elements rcw = doc.select( selector );
@@ -28,7 +29,7 @@ public class NaverRealTimeKeywords {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		long nowmills = System.currentTimeMillis();
 		String now = sdf.format(new Date(nowmills));
-		System.out.println("검색어 가져온 시간 : "+now);
+		System.out.println("실검색어 가져온 시간 : "+now);
 		
 		for (Element el : rcw) {
 			String id = el.parent().attr("id");
