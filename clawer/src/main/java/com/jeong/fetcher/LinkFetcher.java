@@ -25,8 +25,9 @@ public class LinkFetcher {
 			String link= el.attr("abs:href").trim();
 			
 			// 링크주소가 유효할경우 queue에 링크 저장
-			if(varifyLink(link)) 
+			if(varifyLink(link)) {
 				queue.enQueue(link);
+			}
 			
 		}
 		

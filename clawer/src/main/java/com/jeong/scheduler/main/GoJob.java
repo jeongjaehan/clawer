@@ -1,4 +1,4 @@
-package com.jeong.main;
+package com.jeong.scheduler.main;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
