@@ -1,4 +1,4 @@
-package com.jeong.clawer;
+package com.jeong.test.jsoup;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;

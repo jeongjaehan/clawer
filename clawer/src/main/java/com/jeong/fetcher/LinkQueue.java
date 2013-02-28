@@ -1,4 +1,4 @@
-package com.jeong.clawer;
+package com.jeong.fetcher;
 
 import java.util.LinkedHashSet;
 

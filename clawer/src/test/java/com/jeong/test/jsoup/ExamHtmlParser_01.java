@@ -1,4 +1,4 @@
-package com.jeong.clawer;
+package com.jeong.test.jsoup;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

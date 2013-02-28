@@ -1,4 +1,4 @@
-package com.jeong.clawer;
+package com.jeong.fetcher;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
