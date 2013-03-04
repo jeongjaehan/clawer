@@ -26,7 +26,6 @@ public class LinkQueue {
 	public String deQueue() {
 		Object[] arr = links.toArray();
 		String link = arr[cur_idx++].toString();
-		// System.out.println(cur_idx+","+link+","+links.size());
 		return link;
 	}
 

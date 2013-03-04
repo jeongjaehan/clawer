@@ -6,7 +6,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * Example program to list links from a URL.
+ * @author jeong
+ * 
  */
 public class LinkFetcher {
 	
@@ -59,7 +60,7 @@ public class LinkFetcher {
 	public static void main(String[] args) throws Exception {
 		LinkFetcher lf = new LinkFetcher();
 		LinkQueue queue = new LinkQueue();
-		queue.enQueue("http://naver.com"); // 최초 탐색할 url 세팅 
+		queue.enQueue("http://daum.net"); // 최초 탐색할 url 세팅 
 		lf.fetch(queue);
 //		lf.goFetch();
 
